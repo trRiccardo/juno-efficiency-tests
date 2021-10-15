@@ -150,7 +150,7 @@ tndiff_single( <rate>, <number-of-chs>, "<dir>" );
 
 Finally check the waveforms' most meaningful parameters such as the *trigger number* and the *timestamp* trend as function of the event number, using the ROOT output files.
 
-```c++
+```bash
 # plot waveforms to check data quality
 root
 .L /data/48PMT/gcu-proc-dev/analysis/plot_waveforms.C
