@@ -1,0 +1,10 @@
+set mxtics 10
+set mytics 4
+set ylabel "Efficiency (%)"
+set xlabel "Bandwidth (Mb/s)"
+set logscale x
+set title "Efficiency vs Bandwidth: 11 GCU data, 1 process per GCU"
+set key opaque center left
+set size square
+set grid
+plot "plotBW40.txt" w p pt 7 ps 1.1 linecolor rgb "#b20000" title "TW 40", "plotBW80.txt" w p pt 7 ps 1.1 linecolor rgb "#f35613" title "TW 80", "plotBW120.txt" w p pt 7 ps 1.1 linecolor rgb "#f3b013" title "TW 120", 

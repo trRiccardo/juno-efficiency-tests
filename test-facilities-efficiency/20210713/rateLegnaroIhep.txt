@@ -1,0 +1,39 @@
+# plot style
+set ylabel "Efficiency (%)"
+set xlabel "Rate (kHz)"
+set title "Efficiency vs Rate: 1 GCU 3 CH data"
+set key opaque bottom left
+set size 0.8,0.8
+set size square
+set logscale x
+
+# define tics
+set mxtics 10
+set mytics 2
+set tics textcolor rgb "black"
+
+# define axes
+set style line 11 lc rgb '#000000' lt 1
+set border ls 11
+
+# define grid
+set style line 12 lc rgb '#808080' lt 0 lw 1
+set grid back ls 12
+
+# labels
+set label "GCU readout: 1 process per GCU" at graph 0.02,0.33 font ",12"
+set label "Buffer length set to 2048" at graph 0.02,0.28 font ",12"
+set label "Trigger window: 40" at graph 0.02, 0.23 font ",12"
+
+# plots
+plot "rate_legnaro_win40.txt" u ($1/1000):4 w lp pt 7 ps 1.1 linecolor rgb "#397f3f" title "LNL", "rate_ihep_win40.txt" u ($1/1000):4 w lp pt 7 ps 1.1 linecolor rgb "#081da5" title "IHEP"
+
+# set terminal postscript color enhanced
+# set output "<name>.eps"
+# replot
+
+# set terminal pngcairo size 600,600 enhanced font 'Verdana,10'
+# set output "<name>.eps"
+# replot
+
+

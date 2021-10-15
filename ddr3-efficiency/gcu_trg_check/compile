@@ -1,0 +1,2 @@
+rm gcu-check_v1
+g++ -Wall -std=c++17 -o gcu-check_v1 gcu_trg_check.cxx usage.cxx

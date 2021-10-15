@@ -1,0 +1,16 @@
+set mxtics 10
+set mytics 4
+set ylabel "Efficiency (%)"
+set xlabel "Bandwidth (Mb/s)"
+set title "Efficiency vs Bandwidth"
+set key opaque bottom left
+set size square
+set logscale x
+set grid
+set label "GCU readout: 1 process per GCU" at graph 0.02,0.6 font ",13"
+set label "Trigger window: 40" at graph 0.02,0.65 font ",13"
+set label "Buffer length: 2048 bit" at graph 0.02,0.7 font ",13"
+plot "plotBW40_2048.txt" w lp pt 7 ps 1.1 linecolor rgb "#000000" title "11 GCU 33 CH data"
+# set terminal postscript color enhanced
+# set output "<name>.eps"
+# replot

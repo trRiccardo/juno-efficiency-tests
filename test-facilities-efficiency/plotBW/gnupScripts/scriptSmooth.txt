@@ -1,0 +1,12 @@
+set mxtics 6
+set mytics 4
+set ylabel "Efficiency (%)"
+set xlabel "Bandwidth (Mb/s)"
+set title "Efficiency vs Bandwidth: 11 GCU data"
+set key opaque top right
+set size square
+#set grid
+set label "1 GCU: 1 process per GCU" at graph 0.03,0.15 font ",13"
+set label "1 CH: 3 processes per GCU" at graph 0.45,0.5 font ",13"
+plot "plotBW40.txt" w l linecolor rgb "#b20000" title "1 GCU: 40" smooth bezier, "plotBW80.txt" w l linecolor rgb "#f35613" title "1 GCU: 80" smooth bezier, "plotBW120.txt" w l linecolor rgb "#f3b013" title "1 GCU: 120" smooth bezier, \
+"plotBW40_CH.txt" w l linecolor rgb "#397f3f" title "1 CH: 40" smooth bezier, "plotBW80_CH.txt" w l linecolor rgb "#39e547" title "1 CH: 80" smooth bezier, "plotBW120_CH.txt" w l linecolor rgb "#39e5a3" title "1 CH: 120" smooth bezier

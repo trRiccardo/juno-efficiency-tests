@@ -1,0 +1,36 @@
+# plot style
+set ylabel "Survival fraction"
+set xlabel "Rate [kHz]"
+set title "Survival fraction vs Rate: LNL 1 GCU 3 CH data"
+set key opaque bottom left
+set size 0.8,0.8
+set size ratio 0.6
+set logscale x
+
+# define tics
+set mxtics 10
+set mytics 2
+set tics textcolor rgb "black"
+
+# define axes
+set style line 11 lc rgb '#000000' lt 1
+set border ls 11
+
+# define grid
+set style line 12 lc rgb '#808080' lt 0 lw 1
+set grid back ls 12
+
+# labels
+set label "GCU readout: 1 process per GCU" at graph 0.03,0.31 font ",12"
+set label "Buffer length set to 2048" at graph 0.03,0.36 font ",12"
+set label "TW: trigger window" at graph 0.03,0.41 font ",12"
+# plots
+plot "rateGCU_win40.txt" u ($1/1000):($4/100) w lp pt 7 ps 1 linecolor rgb "#b20000" title "TW 40", "rateGCU_win80.txt" u ($1/1000):($4/100) w lp pt 4 ps 1 linecolor rgb "#f35613" title "TW 80", "rateGCU_win120_corr.txt" u ($1/1000):($4/100) w lp pt 5 ps 1 linecolor rgb "#f3b013" title "TW 120"
+
+# set terminal postscript color enhanced
+# set output "<name>.eps"
+# replot
+
+# set terminal pngcairo size 600,600 enhanced font 'Verdana,10'
+# set output "<name>.eps"
+# replot

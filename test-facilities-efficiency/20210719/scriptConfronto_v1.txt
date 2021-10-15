@@ -1,0 +1,40 @@
+# plot style
+set ylabel "Survival fraction (no channels lost)"
+set xlabel "Rate [kHz]"
+set key opaque bottom left
+set size 0.9,0.7
+set size ratio 0.7
+set logscale x
+
+# define tics
+set mxtics 10
+set mytics 2
+set tics textcolor rgb "black"
+
+# define axes
+set style line 11 lc rgb '#000000' lt 1
+set border ls 11
+
+# define grid
+set style line 12 lc rgb '#808080' lt 0 lw 1
+set grid back ls 12
+
+# labels
+set label "CH readout: 3 processes per GCU" at graph 0.03,0.26 font ",12"
+set label "Trigger window: 40" at graph 0.03, 0.31 font ",12"
+
+# plots
+plot "evB_LNL_CH2048_3ch.dat" u ($1/1000):3 w lp pt 7 ps 1.1 linecolor rgb "#397f3f" title "LNL: 1 GCU 3 CH", \
+"evB_IHEP_CH2048_3ch_20210716.dat" u ($1/1000):3 w lp pt 3 ps 1.1 dt 2 linecolor rgb "#b20000" title "IHEP: 1 GCU 3 CH", \
+"evB_IHEP_CH2048_15ch.dat" u ($1/1000):3 w lp pt 3 ps 1.1 dt 3 linecolor rgb "#cc6600" title "IHEP: 5 GCU 15 CH", \
+"evB_IHEP_CH2048_21ch.dat" u ($1/1000):3 w lp pt 3 ps 1.1 dt 4 linecolor rgb "#081da5" title "IHEP: 7 GCU 21 CH"
+
+# set terminal postscript color enhanced
+# set output "<name>.eps"
+# replot
+
+# set terminal pngcairo size 600,600 enhanced font 'Verdana,10'
+# set output "<name>.eps"
+# replot
+
+

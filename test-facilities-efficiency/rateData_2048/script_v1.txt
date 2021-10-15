@@ -1,0 +1,16 @@
+set mxtics 10
+set mytics 4
+set title "Efficiency vs Rate; trigger window: 40; 11 GCU 33 CH data"
+set ylabel "Efficiency (%)"
+set xlabel "Rate (Hz)"
+set key opaque bottom left
+set logscale x
+set size square
+set grid
+set label "GCU: 1 process per GCU" at graph 0.02,0.65 font ",13"
+set label "CH: 3 processes per GCU" at graph 0.02,0.7 font ",13"
+plot "rateCH_win40.txt" u 1:4 with linespoints pt 4 ps 0.9 linecolor rgb "#397f3f" title "CH: length 2048", \
+"rateGCU_win40_512.txt" u 1:4 with linespoints pt 6 ps 0.9 linecolor rgb "#081da5" title "GCU: length 512", \
+"rateGCU_win40_2048.txt" u 1:4 with linespoints pt 8 ps 0.9 linecolor rgb "#b20000" title "GCU: length 2048"
+
+

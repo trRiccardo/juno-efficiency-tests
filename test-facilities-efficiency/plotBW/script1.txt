@@ -1,0 +1,17 @@
+set mxtics 10
+set mytics 4
+set ylabel "Efficiency (%)"
+set xlabel "Bandwidth (Mb/s)"
+set title "Efficiency vs Bandwidth: 11 GCU 33 CH data"
+set key opaque bottom left
+set size square
+set logscale x
+set grid
+set label "GCU: 1 process per GCU" at graph 0.02,0.65 font ",13"
+set label "CH: 3 processes per GCU" at graph 0.02,0.7 font ",13"
+plot "plotBW40.txt" w p pt 7 ps 1.1 linecolor rgb "#b20000" title "GCU: win 40", "plotBW80.txt" w p pt 7 ps 1.1 linecolor rgb "#f35613" title "GCU: win 80", "plotBW120.txt" w p pt 7 ps 1.1 linecolor rgb "#f3b013" title "GCU: win 120", \
+"plotBW40_CH.txt" w p pt 7 ps 1.1 linecolor rgb "#397f3f" title "CH: win 40", "plotBW80_CH.txt" w p pt 7 ps 1.1 linecolor rgb "#39e547" title "CH: win 80", "plotBW120_CH.txt" w p pt 7 ps 1.1 linecolor rgb "#39e5a3" title "CH: win 120"
+
+# set terminal postscript color enhanced
+# set output "<name>.eps"
+# replot

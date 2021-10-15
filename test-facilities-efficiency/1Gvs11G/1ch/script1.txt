@@ -1,0 +1,12 @@
+set mxtics 10
+set mytics 4
+set title "Trigger window: 40"
+set ylabel "Efficiency (%)"
+set xlabel "Rate (Hz)"
+set key opaque center left
+set logscale x
+set size square
+set grid
+plot "CH_1GCU3CH_40.txt" using 1:4 with linespoints pt 7 ps 1.1 linecolor rgb "#b20000" title "1 GCU 3 CH", \
+"CH_11GCU_40.txt" using 1:4 with linespoints pt 7 ps 1.1 linecolor rgb "#397f3f" title "11 GCU 33 CH"
+

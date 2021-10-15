@@ -1,0 +1,12 @@
+set mxtics 6
+set mytics 4
+set title "Trigger window: 40"
+set ylabel "Efficiency (%)"
+set xlabel "Rate (Hz)"
+set key opaque right top
+set logscale x
+set size square
+set grid
+set xrange [950:31000]
+plot "rateCH_win40.txt" using 1:4 with linespoints pt 7 ps 1.1 linecolor rgb "#b20000" title "1 CH", \
+"rateGCU_win40.txt" using 1:4 with linespoints pt 7 ps 1.1 linecolor rgb "#397f3f" title "1 GCU"
