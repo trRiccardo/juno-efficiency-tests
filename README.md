@@ -105,8 +105,8 @@ cd gcu1f3/gcu_v2_scripts/gcu_acq_scripts/ddr
 python enable_ddr.py -s<number-of-GCUs>
 ```
 In this way the acquisition continues automatically and the content is overwritten until the memory is readout.
-It is possible to estimate the waiting time by diving 2 GBs by the trigger window (expressed in Bytes) and by the rate set prior to the acquisition.
-6. Finally acquire data and readout.
+It is possible to estimate the waiting time by dividing 2 GBs by the trigger window (expressed in Bytes) and by the rate set prior to the acquisition.
+Finally acquire data and readout.
 ```bash
 # readout:
 python ddr_readout.py -s<number-of-GCUs> -b True -f <path>/<fname>
